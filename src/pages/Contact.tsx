@@ -108,30 +108,6 @@ const Contact: React.FC = () => {
                   </motion.div>
                 ))}
               </div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="mt-12"
-              >
-                <h3 className="text-xl font-bold text-white mb-6">Follow Us</h3>
-                <div className="flex space-x-4">
-                  {['Twitter', 'Facebook', 'Instagram', 'LinkedIn'].map((platform, index) => (
-                    <motion.a
-                      key={platform}
-                      href="#"
-                      whileHover={{ scale: 1.2, y: -5 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                      className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-orange-400 hover:bg-gray-700 transition-colors"
-                    >
-                      <span className="sr-only">{platform}</span>
-                      <i className={`fab fa-${platform.toLowerCase()}`}></i>
-                    </motion.a>
-                  ))}
-                </div>
-              </motion.div>
             </div>
             
             <div>
@@ -147,10 +123,6 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
-
-      
-      
-      
     </div>
   );
 };
