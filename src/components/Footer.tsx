@@ -16,6 +16,15 @@ const RedditIcon: React.FC<{ size?: number }> = ({ size = 20 }) => (
   </svg>
 );
 
+// Brand icon component
+const BrandIcon: React.FC<{ size?: number; className?: string }> = ({ size = 24, className = '' }) => (
+  <div className={`inline-flex items-center justify-center ${className}`}>
+    <span className="text-cyan-400 font-mono font-bold" style={{ fontSize: `${size}px` }}>
+      &lt;/&gt;
+    </span>
+  </div>
+);
+
 const Footer: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -44,7 +53,15 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-2xl font-bold text-white mb-4">NULLBOTS</h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <BrandIcon size={28} />
+              </motion.div>
+              <h3 className="text-2xl font-bold text-white">NULLBOTS</h3>
+            </div>
             <p className="text-gray-400 max-w-xs">
               A team of anonymous students with a passion for delivering exceptional digital solutions.
             </p>
