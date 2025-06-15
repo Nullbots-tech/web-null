@@ -1,5 +1,4 @@
 import {
-  Globe,
   Paintbrush,
   Gamepad2,
   Smartphone,
@@ -9,11 +8,20 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
+// Custom brand icon component for services
+const BrandIcon = () => (
+  <div className="inline-flex items-center justify-center">
+    <span className="text-cyan-400 font-mono font-bold text-2xl">
+      &lt;/&gt;
+    </span>
+  </div>
+);
+
 interface Service {
   id: string;
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon: LucideIcon | (() => JSX.Element);
   longDescription: string;
 }
 
@@ -22,7 +30,7 @@ export const services: Service[] = [
     id: 'web-development',
     title: 'Web Development',
     description: 'We build responsive, fast, and secure websites and web applications tailored to your specific needs.',
-    icon: Globe,
+    icon: BrandIcon,
     longDescription: 'Our web development team specializes in creating responsive, high-performance websites and web applications. We use the latest technologies and frameworks to ensure your website is fast, secure, and optimized for search engines. From simple landing pages to complex web applications, we have the expertise to bring your vision to life.',
   },
   {
