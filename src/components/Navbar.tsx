@@ -2,15 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-
-// Brand icon component
-const BrandIcon: React.FC<{ size?: number; className?: string }> = ({ size = 24, className = '' }) => (
-  <div className={`inline-flex items-center justify-center ${className}`}>
-    <span className="text-cyan-400 font-mono font-bold" style={{ fontSize: `${size}px` }}>
-      &lt;/&gt;
-    </span>
-  </div>
-);
+import BrandLogo from './BrandLogo';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -100,7 +92,7 @@ const Navbar: React.FC = () => {
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <BrandIcon size={32} />
+                <BrandLogo size={32} />
               </motion.div>
               <span className="text-2xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors">
                 NULLBOTS

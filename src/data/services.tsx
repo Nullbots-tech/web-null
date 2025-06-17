@@ -7,15 +7,7 @@ import {
   Box,
   type LucideIcon,
 } from 'lucide-react';
-
-// Custom brand icon component for services
-const BrandIcon = () => (
-  <div className="inline-flex items-center justify-center">
-    <span className="text-cyan-400 font-mono font-bold text-2xl">
-      &lt;/&gt;
-    </span>
-  </div>
-);
+import BrandLogo from '../components/BrandLogo';
 
 interface Service {
   id: string;
@@ -30,7 +22,7 @@ export const services: Service[] = [
     id: 'web-development',
     title: 'Web Development',
     description: 'We build responsive, fast, and secure websites and web applications tailored to your specific needs.',
-    icon: BrandIcon,
+    icon: () => <BrandLogo size={24} />,
     longDescription: 'Our web development team specializes in creating responsive, high-performance websites and web applications. We use the latest technologies and frameworks to ensure your website is fast, secure, and optimized for search engines. From simple landing pages to complex web applications, we have the expertise to bring your vision to life.',
   },
   {
@@ -40,7 +32,13 @@ export const services: Service[] = [
     icon: Paintbrush,
     longDescription: 'Our UI/UX design process is centered around creating intuitive, engaging, and visually appealing interfaces. We conduct thorough research to understand your users\' needs and preferences, then design interfaces that are both beautiful and functional. Our designs focus on creating seamless user journeys that drive engagement and conversions.',
   },
-  
+  {
+    id: 'game-development',
+    title: 'Game Development',
+    description: 'We create immersive gaming experiences across multiple platforms with cutting-edge graphics and engaging gameplay.',
+    icon: Gamepad2,
+    longDescription: 'Our game development team creates immersive gaming experiences that captivate players across multiple platforms. We specialize in both 2D and 3D game development, utilizing industry-standard engines and tools to create games with stunning visuals, smooth gameplay, and engaging mechanics. From concept to launch, we handle every aspect of game development including design, programming, art, sound, and testing.',
+  },
   {
     id: 'app-development',
     title: 'App Development',
